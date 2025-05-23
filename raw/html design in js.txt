@@ -1,0 +1,201 @@
+document.addEventListener('DOMContentLoaded',() =>{
+  const wrapper = document.createElement('div');
+  wrapper.className = 'wrapper';
+  document.body.appendChild(wrapper);
+  const header = document.createElement('header');
+  const h1 = document.createElement('h1');
+  const nav = document.createElement('nav');
+  const ul = document.createElement('ul');
+  const headerLink = ['Home','Project','Contact','About','Skill'];
+  headerLink.forEach(link=>{
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.textContent = link;
+    a.href = '#';
+    li.appendChild(a);
+    ul.appendChild(li);
+    nav.appendChild(ul);
+  })
+  h1.textContent = 'sumit';
+  header.appendChild(h1);
+  header.appendChild(nav);
+  wrapper.appendChild(header);
+
+  const main = document.createElement('main');
+  const bentoGrid = document.createElement('div');
+  bentoGrid.className = 'bento-grid';
+  main.appendChild(bentoGrid);
+
+  const projects = [
+    {
+      title: 'stats preview card',
+      description: 'This is the stats preview card designs',
+      liveLink: 'https://stats-preview-card-designs.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/stats-preview-card',
+      projectImg: './images/desktop-design-stats.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'testinomails grid card',
+      description: 'This is the testimonials grid design',
+      liveLink: 'https://testimonials-grid-design.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/testimonials-grid-design',
+      projectImg: './images/desktop-design-testimoials.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'social proff card',
+      description: 'This is the social proff section card designs',
+      liveLink: 'https://social-prooff-section.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/social-proof-section',
+      projectImg: './images/desktop-design-social.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'order summary card',
+      description: 'This is the order summary card design which is from Front mentor',
+      liveLink: 'https://order-summary-designed.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/order-summary-design',
+      projectImg: './images/desktop-design-order.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'huddle landing page',
+      description: 'This is the huddle landing page which is made from Front mentor',
+      liveLink: 'https://huddle-landing-pages-responsive.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/huddle-landing-page',
+      projectImg: './images/desktop-design-huddle.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'bento grid card',
+      description: 'This is the bento grid which is made from Front mentor',
+      liveLink: 'https://binto-grids.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/betno-grid',
+      projectImg: './images/desktop-design-bento.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'clipboard landing page',
+      description: 'This is the clipboard landing page design which is from Front mentor',
+      liveLink: 'https://clipboard-landing-pagge.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/clipboard-landing-page',
+      projectImg: './images/desktop-design-clipboard.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'result summary card',
+      description: 'This is the result summary card which is made from Front mentor',
+      liveLink: 'https://results-summary-simple-website.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/results-summary-component-main',
+      projectImg: './images/desktop-design-results.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'task manager app',
+      description: 'This is the taskmanager app in js',
+      liveLink: 'https://taskmanager-javascripts.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/taskmanager-js',
+      projectImg: './images/desktop-design-taskmanager.png',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'quiz app',
+      description: 'This is the quiz application and simple functionality is in made with js',
+      liveLink: 'https://quiz-question-js.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/quiz-js',
+      projectImg: './images/desktop-design-quiz.png',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'budget tracker app',
+      description: 'This is the budget tracker in HTML, CSS, JAVASCRIPT',
+      liveLink: 'https://budget-tracker-in-js.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/BudgetTracker-Js',
+      projectImg: './images/desktop-design-budget.png',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'blog preview card',
+      description: 'This is the blog preview card which is from Front mentor',
+      liveLink: 'https://fm-blog-preview-card-sol.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/fm-block-preview-card-main',
+      projectImg: './images/desktop-design-preview.jpg',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'social link card',
+      description: 'This is the social link card design which is from Front mentor',
+      liveLink: 'https://fm-social-link-profile-sol.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/fm-Social-links-profile',
+      projectImg: './images/desktop-design-budget.png',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    },
+    {
+      title: 'recipe page',
+      description: 'This is the recipe page design which is from Front mentor',
+      liveLink: 'https://fm-recipe-page-sol.netlify.app/',
+      githubLink: 'https://github.com/thesumitchaudhary/fm-recipe-page',
+      projectImg: './images/desktop-design-budget.png',
+      shareImg: './images/share.svg',
+      githubImg: './images/github.svg'
+    }
+  ];
+
+  projects.forEach(project =>{
+    const card = document.createElement('div');
+    card.className = 'card';
+    const description = document.createElement('p');
+    description.textContent = project.description;
+    card.appendChild(description);
+
+    const projectImgBox = document.createElement('div');
+    const imageProject = document.createElement('img');
+    imageProject.src = project.projectImg;
+    projectImgBox.appendChild(imageProject);
+    card.appendChild(projectImgBox);
+
+
+    const linkBox = document.createElement('div');
+    linkBox.className = 'first-card-link-box';
+
+    const liveLink = document.createElement('a');
+    liveLink.href = project.liveLink;
+    liveLink.target = '_blank';
+    const shareImg = document.createElement('img');
+    shareImg.src = project.shareImg;
+    shareImg.height = 20;
+    shareImg.alt = '';
+    liveLink.appendChild(shareImg);
+    linkBox.appendChild(liveLink);  
+
+    const githubLink = document.createElement('a');
+    githubLink.href = project.githubLink;
+    githubLink.target = '_blank';
+    const githubImg = document.createElement('img');
+    githubImg.src = project.githubImg;
+    githubImg.height = 20;
+
+    githubLink.appendChild(githubImg);
+    linkBox.appendChild(githubLink);
+
+
+    card.appendChild(linkBox);  
+    bentoGrid.appendChild(card);
+  })
+
+  wrapper.appendChild(main);
+});
