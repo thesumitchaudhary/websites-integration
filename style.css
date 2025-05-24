@@ -125,7 +125,10 @@
     gap: 30px;
 
     @media (width < 375px) {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      gap: 15px;
     }
   }
 

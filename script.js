@@ -423,7 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
       descriptionUl = document.createElement("ul");
       project.descriptionFeatures.forEach((feature) => {
         if (typeof feature === "string") {
-          const heading = document.createElement("h5");
+          const heading = document.createElement("h4");
           heading.textContent = feature.split(":")[0]; // Extract heading
           const para = document.createElement("p");
           para.textContent = feature.split(":").slice(1).join(":").trim(); // Rest as paragraph
