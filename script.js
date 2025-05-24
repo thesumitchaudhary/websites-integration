@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   /* -------------- header & nav ----------------- */
   const header = document.createElement("header");
   const h1 = document.createElement("h1");
-  h1.textContent = "sumit";
+  h1.textContent = "website integrated by sumit";
 
   const nav = document.createElement("nav");
   const menuHideShow = document.createElement("div");
-  menuHideShow.className = "menu menu-go";
+  menuHideShow.className = "menu";
   const hemburgerImg = document.createElement("img");
   hemburgerImg.className = "menu-hide-show";
   hemburgerImg.src = "./images/burger-menu.svg";
