@@ -1,18 +1,28 @@
 document.addEventListener('DOMContentLoaded',() =>{
-  const wrapper = document.createElement('div');
-  wrapper.className = 'wrapper';
-  document.body.appendChild(wrapper);
+/* ---------------- page shell -----------------  */
+const wrapper = document.createElement('div');
+wrapper.className = 'wrapper';
+document.body.appendChild(wrapper);
+
+/* -------------- header & nav ----------------- */
   const header = document.createElement('header');
   const h1 = document.createElement('h1');
+  h1.textContent = 'sumit';
+
+
   const nav = document.createElement('nav');
+  const menuHideShow = document.createElement('div');
+  menuHideShow.className = 'menu menu-go'
   const hemburgerImg = document.createElement('img');
   hemburgerImg.className = 'menu-hide-show';
   hemburgerImg.src = './images/burger-menu.svg';
   hemburgerImg.alt = '';      
   const corssImg = document.createElement('img');
-  corssImg.className = 'menu-hide-show';      
+  corssImg.className = 'cross-menu-hide-show';      
   corssImg.src = './images/cross.svg';      
   corssImg.alt = '';      
+  menuHideShow.appendChild(hemburgerImg);
+  menuHideShow.appendChild(corssImg);
   const ul = document.createElement('ul');       
   const headerLink = ['Home','Project','Contact','About','Skill'];
   headerLink.forEach(link=>{
@@ -24,16 +34,17 @@ document.addEventListener('DOMContentLoaded',() =>{
     ul.appendChild(li);
     nav.appendChild(ul);
   })
-  h1.textContent = 'sumit';
   header.appendChild(h1);
   header.appendChild(nav);
-  header.appendChild(hemburgerImg);
-  header.appendChild(corssImg);
+  header.appendChild(menuHideShow);
 
+// for toggle header and menu
+   corssImg.style.display = "none";
   hemburgerImg.addEventListener('click',() =>{
     nav.style.display = "block";
     h1.style.display = "block";
     hemburgerImg.style.display = "none";
+    corssImg.style.display = "block";
   });
   
   corssImg.addEventListener('click',(e) =>{
